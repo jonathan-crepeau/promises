@@ -76,11 +76,9 @@
 // const lesserThanFive = numbers.filter(lessThanFive);
 // console.log(lesserThanFive);
 
-const addOne = (num) => num + 1;
-console.log(addOne(1));
-console.log(addOne(2));
-
-
+// const addOne = (num) => num + 1;
+// console.log(addOne(1));
+// console.log(addOne(2));
 
 // const isNumberType = (input) => {
 //     return typeof input == 'number';
@@ -90,15 +88,18 @@ console.log(addOne(2));
 // console.log(isNumberType(23));
 
 
-// SECTION - Callback example:
+// SECTION - Promise Example #1:
 
-// const functionThatAcceptsCallback = (func) => {
-//     return func(4, 18, 3);
-// }
+let jonathanPromise = new Promise(function(resolve, reject) {
+    const num = Math.floor(Math.random() * (1 - 0 + 1) + 0);
+    if (num === 0) {
+        resolve();
+    } else {
+        reject();
+    }
+})
 
-// const callbackFunc = (arg1, arg2, arg3) => {
-//     return Math.floor((arg1 + arg2) / arg3);
-// }
-
-// console.log(functionThatAcceptsCallback(callbackFunc));
-
+jonathanPromise.then(
+    result => console.log('result!'),
+    error => console.log('error!')
+)
