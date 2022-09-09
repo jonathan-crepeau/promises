@@ -56,14 +56,49 @@
 
 // SECTION - Asynchronous example, call Pokemon API:
 
-const loadPokemon = (id, cb) => {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
-    .then(res => res.json())
-    .then(data => {
-        cb(data)
-    })
-}
+// const loadPokemon = (id, cb) => {
+//     fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
+//     .then(res => res.json())
+//     .then(data => {
+//         cb(data)
+//     })
+// }
 
-loadPokemon(77, (pokemon) => {
-    console.log(pokemon);
-});
+// loadPokemon(77, (pokemon) => {
+//     console.log(pokemon);
+// });
+
+
+// SECTION - Callback example:
+
+// const numbers = [8, 2, 9, 3, 7];
+// const lessThanFive = (number) => number < 5;
+// const lesserThanFive = numbers.filter(lessThanFive);
+// console.log(lesserThanFive);
+
+const addOne = (num) => num + 1;
+console.log(addOne(1));
+console.log(addOne(2));
+
+
+
+// const isNumberType = (input) => {
+//     return typeof input == 'number';
+// }
+// console.log(isNumberType(7));
+// console.log(isNumberType('Jonathan'));
+// console.log(isNumberType(23));
+
+
+// SECTION - Callback example:
+
+// const functionThatAcceptsCallback = (func) => {
+//     return func(4, 18, 3);
+// }
+
+// const callbackFunc = (arg1, arg2, arg3) => {
+//     return Math.floor((arg1 + arg2) / arg3);
+// }
+
+// console.log(functionThatAcceptsCallback(callbackFunc));
+
