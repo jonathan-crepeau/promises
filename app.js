@@ -90,16 +90,37 @@
 
 // SECTION - Promise Example #1:
 
-let jonathanPromise = new Promise(function(resolve, reject) {
-    const num = Math.floor(Math.random() * (1 - 0 + 1) + 0);
+// let jonathanPromise = new Promise(function(resolve, reject) {
+//     const num = Math.floor(Math.random() * (1 - 0 + 1) + 0);
+//     if (num === 0) {
+//         resolve();
+//     } else {
+//         reject();
+//     }
+// })
+
+// jonathanPromise.then(
+//     () => console.log('success!')
+// );
+
+
+// SECTION Promise resolve example:
+let promise = new Promise(function(resolve, reject) {
+    let num = Math.floor(Math.random() * (1 - 0 + 1) + 0);
     if (num === 0) {
-        resolve();
+        resolve("done");
     } else {
-        reject();
+        reject(new Error('whoops!'));
     }
 })
 
-jonathanPromise.then(
-    result => console.log('result!'),
-    error => console.log('error!')
+// promise.then(
+//     result => console.log(result),
+//     error => console.log(error)
+// );
+
+promise.then(
+    null, (error) => {
+        console.log(`====== ${error} ======`);
+    }
 )
